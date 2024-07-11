@@ -49,7 +49,7 @@
                     <x-nav-link :href="route('admin.my-withdrawals')" :active="request()->routeIs('admin.my-withdrawals')">
                         {{ __('My Withdrawals') }}
                     </x-nav-link>
-                    
+
                     @endrole
 
                 </div>
@@ -60,7 +60,7 @@
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
-                            <div>{{ Auth::user()->name }}</div>
+                            <div class="flex flex-row items-center gap-x-5"> <img class="w-[30px] h-[30px]" src="{{Storage::url(Auth::user()->avatar)}}" alt=""> {{ Auth::user()->name }}</div>
 
                             <div class="ms-1">
                                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
