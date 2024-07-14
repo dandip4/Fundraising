@@ -12,7 +12,7 @@ class FundraisingPhase extends Model
 
     protected $fillable = [
         'name',
-        'notes',
+        'note',
         'fundraising_id',
         'photo'
     ];

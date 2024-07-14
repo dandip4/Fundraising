@@ -18,43 +18,48 @@
                         <path d="M12.5494 18.5601H9.10938C8.69938 18.5601 8.35938 18.2201 8.35938 17.8101C8.35938 17.4001 8.69938 17.0601 9.10938 17.0601H12.5494C12.9594 17.0601 13.2994 17.4001 13.2994 17.8101C13.2994 18.2201 12.9694 18.5601 12.5494 18.5601Z" fill="#292D32"/>
                         <path d="M19 11.8599H2V13.3599H19V11.8599Z" fill="#292D32"/>
                         </svg>
-                    <div class="flex flex-col gap-y-10">    
+                    <div class="flex flex-col gap-y-10">
                         <div>
                             <p class="text-slate-500 text-sm">Total Amount</p>
-                            <h3 class="text-indigo-950 text-xl font-bold">Rp 183409</h3>
+                            <h3 class="text-indigo-950 text-xl font-bold">Rp {{number_format($donatur->total_amount, 0, ',','.')}}</h3>
                         </div>
+                        @if($donatur->is_paid)
                         <span class="w-fit text-sm font-bold py-2 px-3 rounded-full bg-green-500 text-white">
-                            SUCCESS
+                            PAID
                         </span>
+                        @else
                         <span class="w-fit text-sm font-bold py-2 px-3 rounded-full bg-orange-500 text-white">
                             PENDING
-                        </span> 
+                        </span>
+                        @endif
                         <div>
                             <p class="text-slate-500 text-sm">Date</p>
-                            <h3 class="text-indigo-950 text-xl font-bold">12 Jan 2024</h3>
+                            <h3 class="text-indigo-950 text-xl font-bold">{{$donatur->created_at}}</h3>
                         </div>
                         <div class="">
                             <p class="text-slate-500 text-sm">Donatur</p>
-                            <h3 class="text-indigo-950 text-xl font-bold">Annima Poppo</h3>
+                            <h3 class="text-indigo-950 text-xl font-bold">{{$donatur->name}}</h3>
                         </div>
                     </div>
                     <div>
-                        <img src="https://images.unsplash.com/photo-1611174797136-5e167ea90d6c?q=80&w=3120&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="rounded-2xl object-cover w-[300px] h-[200px] mb-3">
-                        <h3 class="text-indigo-950 text-xl font-bold">Kebakaran Hutan</h3>
-                        <p class="text-slate-500 text-sm">Target Rp     38940909</p>
+                        <img src="{{Storage::url($donatur->fundraising->thumbnail)}}" alt="" class="rounded-2xl object-cover w-[300px] h-[200px] mb-3">
+                        <h3 class="text-indigo-950 text-xl font-bold">{{$donatur->fundraising->name}}</h3>
+                        <p class="text-slate-500 text-sm">Target Rp     {{number_format($donatur->fundraising->target_amount, 0, ',','.')}}</p>
                     </div>
                 </div>
                 <hr class="my-5">
                 <h3 class="text-indigo-950 text-xl font-bold mb-5">Proof of Payment</h3>
-                <img src="https://i.pinimg.com/236x/68/ed/dc/68eddcea02ceb29abde1b1c752fa29eb.jpg" alt="" class="rounded-2xl object-cover w-[300px] h-[200px] mb-3">
+                <img src="{{Storage::url($donatur->proof)}}" alt="" class="rounded-2xl object-cover w-[300px] h-[200px] mb-3">
                 <hr class="my-5">
-                <form action="#" method="POST">
+                @if (!$donatur->is_paid)
+                <form action="{{route('admin.donaturs.update', $donatur)}}" method="POST">
                     @csrf
                     @method('PUT')
                     <button type="submit" class="font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">
                         Confirm Donation
                     </button>
                 </form>
+                @endif
             </div>
         </div>
     </div>

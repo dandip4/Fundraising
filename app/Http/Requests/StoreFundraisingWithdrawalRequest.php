@@ -11,7 +11,7 @@ class StoreFundraisingWithdrawalRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return $this->user()->hasAnyRole(['owner|fundraiser']);
+        return $this->user()->hasAnyRole(['fundraiser']);
     }
 
     /**

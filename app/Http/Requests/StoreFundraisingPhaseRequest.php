@@ -23,7 +23,7 @@ class StoreFundraisingPhaseRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'max:255'],
-            'notes' => ['required', 'string', 'max:60000'],
+            'note' => ['required', 'string', 'max:60000'],
             'photo' => ['required', 'image', 'mimes:png,jpg,jpeg'],
 
         ];

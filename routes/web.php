@@ -14,16 +14,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    
     Route::prefix('admin')->name('admin.')->group(function() {
+
 
         Route::resource('categories', CategoryController::class)->middleware('role:owner');
 
@@ -35,7 +34,7 @@ Route::middleware('auth')->group(function () {
 
         Route::resource('fundraising_withdrawals', FundraisingWithdrawalController::class)->middleware('role:owner|fundraiser');
 
-        Route::post('fundraising_withdrawals/request/{fundraising}', [FundraisingWithdrawalController::class, 'store'])->middleware('role|fundraiser')->name('fundraising_withdrawals.store');
+        Route::post('fundraising_withdrawals/request/{fundraising}', [FundraisingWithdrawalController::class, 'store'])->middleware('role:fundraiser')->name('fundraising_withdrawals.store');
 
         Route::resource('fundraising_phase', FundraisingPhaseController::class)->middleware('role:owner|fundraiser');
 
@@ -47,7 +46,7 @@ Route::middleware('auth')->group(function () {
 
         Route::post('/fundraiser/apply', [DashboardController::class, 'apply_fundraiser'])->name('fundraiser.apply');
 
-        Route::post('/my-withdrawals', [DashboardController::class, 'my_withdrawals'])->name('my-withdrawals');
+        Route::get('/my-withdrawals', [DashboardController::class, 'my_withdrawals'])->name('my-withdrawals');
 
         Route::get('/my-withdrawals/details/{fundraisingWithdrawal}', [DashboardController::class, 'my_withdrawals_detail'])->name('my-withdrawals.detail');
     });
