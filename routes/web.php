@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DonaturController;
+use App\Http\Controllers\FeController;
 use App\Http\Controllers\FundraiserController;
 use App\Http\Controllers\FundraisingController;
 use App\Http\Controllers\FundraisingPhaseController;
@@ -14,13 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/', [FeController::class, 'index'])->name('fe.index');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    
+
     Route::prefix('admin')->name('admin.')->group(function() {
 
 

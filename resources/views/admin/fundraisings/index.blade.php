@@ -25,7 +25,11 @@
                     </div>
                     <div class="hidden md:flex flex-col">
                         <p class="text-slate-500 text-sm">Target Amount</p>
+<<<<<<< HEAD
                         <h3 class="text-indigo-950 text-xl font-bold">Rp {{number_format($fundraising->target_amount, 0, ',' ,'.')}}</h3>
+=======
+                        <h3 class="text-indigo-950 text-xl font-bold">Rp {{$fundraising->target_ammount}}</h3>
+>>>>>>> 6246727 (fundraiser and fundraising)
                     </div>
                     <div class="hidden md:flex flex-col">
                         <p class="text-slate-500 text-sm">Donaturs</p>

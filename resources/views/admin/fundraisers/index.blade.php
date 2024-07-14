@@ -85,7 +85,11 @@
                         PENDING
                     </span>
                     @elseif ($fundraiserStatus == 'Active')
+<<<<<<< HEAD
                     <a href="{{route('admin.fundraisings.create')}}" class="font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">
+=======
+                    <a href="#" class="font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">
+>>>>>>> 6246727 (fundraiser and fundraising)
                         Create a Fundraising
                     </a>
                     @else

@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< HEAD
 use App\Models\Category;
 use App\Models\Donatur;
 use App\Models\Fundraiser;
 use App\Models\Fundraising;
 use App\Models\FundraisingWithdrawal;
+=======
+use App\Models\Fundraiser;
+>>>>>>> 6246727 (fundraiser and fundraising)
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -26,6 +30,7 @@ class DashboardController extends Controller
 
         return redirect()->route('admin.fundraisers.index');
     }
+<<<<<<< HEAD
 
     public function my_withdrawals()
     {
@@ -72,4 +77,6 @@ class DashboardController extends Controller
 
             return view('dashboard', compact('donaturs', 'fundraisings', 'categories', 'withdrawals', 'fundraisers'));
     }
+=======
+>>>>>>> 6246727 (fundraiser and fundraising)
 }
