@@ -35,7 +35,7 @@
 
 
                         <div>
-                            <p class="text-slate-500 text-sm">Fundraisings</p>
+                            <p class="text-slate-500 text-sm">Fundraisinggs</p>
                             <h3 class="text-indigo-950 text-xl font-bold"> {{$fundraisings}}</h3>
                         </div>
                     </div>
