@@ -1,4 +1,5 @@
 @extends('FE.layouts.app')
+@section('title', 'home')
 @section('content')
 <section class="max-w-[640px] w-full min-h-screen mx-auto flex flex-col bg-white overflow-x-hidden pb-[134px]">
     <div class="header flex flex-col bg-gradient-to-b from-[#3CBBDB] to-[#EAD380] rounded-b-[50px] overflow-hidden">

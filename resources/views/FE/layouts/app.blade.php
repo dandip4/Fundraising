@@ -8,6 +8,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="{{asset('assets/js/flickity.min.css')}}" media="screen">
     @stack('css')
+    <title>@yield('title')</title>
 </head>
 <body class="font-poppins text-[#292E4B] bg-[#F6F9FC]">
 

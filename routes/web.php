@@ -17,6 +17,16 @@ Route::get('/', function () {
 
 Route::get('/', [FeController::class, 'index'])->name('fe.index');
 
+Route::get('/category/{category}', [FeController::class, 'category'])->name('fe.category');
+
+Route::get('/details/{fundraising:slug}', [FeController::class, 'details'])->name('fe.details');
+
+Route::get('/support/{fundraising:slug}', [FeController::class, 'support'])->name('fe.support');
+
+Route::get('/checkout/{fundraising:slug}/{totalAmountDonation}', [FeController::class, 'checkout'])->name('fe.checkout');
+
+Route::get('/checkout/store/{fundraising:slug}/{totalAmountDonation}', [FeController::class, 'store'])->name('fe.store');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

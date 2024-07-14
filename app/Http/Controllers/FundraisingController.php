@@ -9,11 +9,8 @@ use App\Models\Fundraiser;
 use App\Models\Fundraising;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-<<<<<<< HEAD
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
-=======
->>>>>>> 6246727 (fundraiser and fundraising)
 
 class FundraisingController extends Controller
 {
@@ -36,7 +33,6 @@ class FundraisingController extends Controller
         $fundraisings = $fundraisingQuery->paginate(10);
 
         return view('admin.fundraisings.index', compact('fundraisings'));
-<<<<<<< HEAD
     }
 
     public function active_fundraising(Fundraising $fundraising)
@@ -50,14 +46,6 @@ class FundraisingController extends Controller
         return redirect()->route('admin.fundraisings.show', $fundraising);
     }
 
-=======
-    }
-
-    public function activate_fundrasising()
-    {
-
-    }
->>>>>>> 6246727 (fundraiser and fundraising)
     public function create()
     {
         $categories = Category::all();
