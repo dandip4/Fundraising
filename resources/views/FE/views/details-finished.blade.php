@@ -6,7 +6,7 @@
         <div class="header flex flex-col bg-[#56BBC5] overflow-hidden h-[350px] relative -mb-[92px]">
             <nav class="pt-5 px-3 flex justify-between items-center relative z-20">
                 <div class="flex items-center gap-[10px]">
-                    <a href="index.html" class="w-10 h-10 flex shrink-0">
+                    <a href="{{route('fe.index')}}" class="w-10 h-10 flex shrink-0">
                         <img src="{{asset('assets/images/icons/back.svg')}}" alt="icon">
                     </a>
                 </div>
@@ -20,7 +20,7 @@
             </nav>
             <div class="w-full h-full absolute bg-white overflow-hidden">
                 <div class="w-full h-[266px] bg-gradient-to-b from-black/90 to-[#080925]/0 absolute z-10"></div>
-                <img src="{{asset('assets/images/thumbnails/th4.png')}}')}}" class="w-full h-full object-cover" alt="cover">
+                <img src="{{ Storage::url($fundraising->thumbnail) }}" class="w-full h-full object-cover" alt="cover">
             </div>
         </div>
         <div class="flex flex-col z-30">

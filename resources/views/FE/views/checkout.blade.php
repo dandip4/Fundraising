@@ -6,14 +6,14 @@
             <nav class="pt-5 px-3 flex justify-between items-center relative z-20">
                 <div class="flex items-center gap-[10px]">
                     <a href="details.html" class="w-10 h-10 flex shrink-0">
-                        <img src="{{asset('assets/images/icons/back.png')}}" alt="icon">
+                        <img src="{{asset('assets/images/icons/back.svg')}}" alt="icon">
                     </a>
                 </div>
                 <div class="flex flex-col items-center text-center">
                     <p class="font-semibold text-sm">#SendSupport</p>
                 </div>
                 <a href="" class="w-10 h-10 flex shrink-0">
-                    <img src="{{asset('assets/images/icons/menu-dot.png')}}" alt="icon">
+                    <img src="{{asset('assets/images/icons/menu-dot.svg')}}" alt="icon">
                 </a>
             </nav>
             <div class="flex items-center px-4 my-auto gap-[14px]">
@@ -34,7 +34,7 @@
                         <p class="font-semibold text-sm">Your Donation</p>
                         <div class="bg-[#E8E9EE] w-full flex items-center rounded-2xl p-[14px_16px] gap-[10px]">
                             <div class="w-6 h-6 flex shrink-0">
-                                <img src="{{asset('assets/images/icons/dollar-circle.png')}}" alt="icon">
+                                <img src="{{asset('assets/images/icons/dollar-circle.svg')}}" alt="icon">
                             </div>
                             <p class="font-semibold">Rp 1.000.000</p>
                         </div>
@@ -49,7 +49,7 @@
                                     <img src="{{asset('assets/images/icons/Bank_Central_Asia.webp')}}" class="object-contain" alt="icon">
                                 </div>
                                 <div class="arrow w-5 h-5 flex shrink-0 transition-all duration-300">
-                                    <img src="{{asset('assets/images/icons/arrow-down.png')}}" class="" alt="icon">
+                                    <img src="{{asset('assets/images/icons/arrow-down.svg')}}" class="" alt="icon">
                                 </div>
                             </button>
                             <div id="accordion-faq-1" class="accordion-content open">
@@ -78,7 +78,7 @@
                         <p class="font-semibold text-sm">Your Name</p>
                         <div class="flex items-center w-full p-[14px_16px] rounded-2xl border border-[#E8E9EE] focus-within:border-[#292E4B] transition-all duration-300">
                             <div class="mr-[10px] w-6 h-6 flex items-center justify-center overflow-hidden">
-                                <img src="{{asset('assets/images/icons/user.png')}}" class="h-full w-full object-contain" alt="icon">
+                                <img src="{{asset('assets/images/icons/user.svg')}}" class="h-full w-full object-contain" alt="icon">
                             </div>
                             <input type="text" class="font-semibold placeholder:text-[#292E4B] placeholder:font-normal w-full outline-none" placeholder="What’s your name?" name="name">
                         </div>
@@ -87,7 +87,7 @@
                         <p class="font-semibold text-sm">No. WhatsApp</p>
                         <div class="flex items-center w-full p-[14px_16px] rounded-2xl border border-[#E8E9EE] focus-within:border-[#292E4B] transition-all duration-300">
                             <div class="mr-[10px] w-6 h-6 flex items-center justify-center overflow-hidden">
-                                <img src="{{asset('assets/images/icons/call.png')}}" class="h-full w-full object-contain" alt="icon">
+                                <img src="{{asset('assets/images/icons/call.svg')}}" class="h-full w-full object-contain" alt="icon">
                             </div>
                             <input type="number" class="font-semibold placeholder:text-[#292E4B] placeholder:font-normal w-full outline-none" placeholder="Write phone number" name="phone">
                         </div>
@@ -97,7 +97,7 @@
                         <div class="relative">
                             <button type="button" class="p-[14px_16px] rounded-2xl flex gap-[10px] w-full border border-[#E8E9EE] focus-within:border-[#292E4B] transition-all duration-300" onclick="document.getElementById('file').click()">
                                 <div class="w-6 h-6 flex shrink-0">
-                                    <img src="{{asset('assets/images/icons/receipt-text.png')}}" alt="icon">
+                                    <img src="{{asset('assets/images/icons/receipt-text.svg')}}" alt="icon">
                                 </div>
                                 <p id="fileLabel">Add an attachment</p>
                             </button>
@@ -108,7 +108,7 @@
                         <p class="font-semibold text-sm">Your Notes</p>
                         <div class="flex w-full p-[14px_16px] rounded-2xl border border-[#E8E9EE] focus-within:border-[#292E4B] transition-all duration-300">
                             <div class="mr-[10px] w-6 h-6 flex items-center justify-center overflow-hidden">
-                                <img src="{{asset('assets/images/icons/sms.png')}}" class="h-full w-full object-contain" alt="icon">
+                                <img src="{{asset('assets/images/icons/sms.svg')}}" class="h-full w-full object-contain" alt="icon">
                             </div>
                             <textarea name="notes" id="notes" class="font-semibold placeholder:text-[#292E4B] placeholder:font-normal w-full outline-none" cols="30" rows="4" placeholder="Write your beautiful message"></textarea>
                         </div>
