@@ -25,7 +25,7 @@ Route::get('/support/{fundraising:slug}', [FeController::class, 'support'])->nam
 
 Route::get('/checkout/{fundraising:slug}/{totalAmountDonation}', [FeController::class, 'checkout'])->name('fe.checkout');
 
-Route::get('/checkout/store/{fundraising:slug}/{totalAmountDonation}', [FeController::class, 'store'])->name('fe.store');
+Route::Post('/checkout/store/{fundraising:slug}/{totalAmountDonation}', [FeController::class, 'store'])->name('fe.store');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

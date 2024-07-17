@@ -16,7 +16,8 @@ class Donatur extends Model
         'fundraising_id',
         'total_amount',
         'is_paid',
-        'proof'
+        'proof',
+        'phone_number'
     ];
 
     public function fundraising(){
